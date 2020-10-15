@@ -1,0 +1,107 @@
+﻿@model Tuple<Project, barometricpressure, battery, humidity, luminance, temperature>
+@{
+    ViewData["Title"] = "View";
+}
+     <link rel="stylesheet" href="~/css/Chart.css" />
+<div id="barometricChart"></div>
+
+@*<table class="table table-striped">
+        <thead>
+            <tr class="table-primary">
+                <th> @Html.DisplayNameFor(Tuple => Tuple.Item2.time)</th>
+                <th>
+                    @Html.DisplayNameFor(Tuple => Tuple.Item2.name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(Tuple => Tuple.Item2.sensor_number)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(Tuple => Tuple.Item2.sensor_type)
+                </th>
+                <th> @Html.DisplayNameFor(Tuple => Tuple.Item2.value)</th>
+            </tr>
+        </thead>
+        <tbody id="dataDump"></tbody>
+    </table>*@
+
+<h1>Battery</h1>
+<table class="table table-striped">
+    <thead>
+        <tr class="table-primary">
+            <th> @Html.DisplayNameFor(Tuple => Tuple.Item3.time)</th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item3.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item3.sensor_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item3.sensor_type)
+            </th>
+            <th> @Html.DisplayNameFor(Tuple => Tuple.Item3.value)</th>
+        </tr>
+    </thead>
+    <tbody id="dataDump2"></tbody>
+</table>
+
+<h1>Humidity</h1>
+<table class="table table-striped">
+    <thead>
+        <tr class="table-primary">
+            <th> @Html.DisplayNameFor(Tuple => Tuple.Item4.time)</th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item4.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item4.sensor_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item4.sensor_type)
+            </th>
+            <th> @Html.DisplayNameFor(Tuple => Tuple.Item4.value)</th>
+        </tr>
+    </thead>
+    <tbody id="dataDump3"></tbody>
+</table>
+
+<h1>Luminance</h1>
+<table class="table table-striped">
+    <thead>
+        <tr class="table-primary">
+            <th> @Html.DisplayNameFor(Tuple => Tuple.Item5.time)</th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item5.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item5.sensor_number)
+            </th>
+            <th>
+                @Html.DisplayNameFor(Tuple => Tuple.Item5.sensor_type)
+            </th>
+            <th> @Html.DisplayNameFor(Tuple => Tuple.Item5.value)</th>
+        </tr>
+    </thead>
+    <tbody id="dataDump4"></tbody>
+</table>
+
+<h1>Temperature</h1>
+<table class="table table-striped">
+    <thead>
+        <tr class="table-primary">
+            <th>@Html.DisplayNameFor(Tuple => Tuple.Item6.time)</th>
+            <th>@Html.DisplayNameFor(Tuple => Tuple.Item6.name)</th>
+            <th>@Html.DisplayNameFor(Tuple => Tuple.Item6.sensor_number)</th>
+            <th>@Html.DisplayNameFor(Tuple => Tuple.Item6.sensor_type)</th>
+            <th>@Html.DisplayNameFor(Tuple => Tuple.Item6.value)</th>
+        </tr>
+    </thead>
+    <tbody id="dataDump5"></tbody>
+</table>
+<script src="~/lib/d3/d3.js"></script>
+<script src="https://unpkg.com/d3@5.6.0/dist/d3.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/js/SmartBuild.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+<script src="~/lib/microsoft/signalr/dist/browser/signalr.js"></script>
+
+

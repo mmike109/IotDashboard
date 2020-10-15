@@ -1,0 +1,78 @@
+﻿:root {
+    --hexagon-transition-duration: 0.3s;
+    --hexagon-font-size: 1.4em;
+    --hexagon-font-size-hovered: 1.6em;
+}
+
+#svgContainer {
+    /* width and height initially zeroed and then set dynamically in javascript */
+    width: 0;
+    height: 0;
+    display: block;
+    margin: auto;
+}
+
+.hexagon {
+    transition: fill var(--hexagon-transition-duration);
+}
+
+
+.hexagon-link polygon {
+    stroke: rgba(56, 129, 162, 0.6);
+    stroke-width: 12;
+    transition: stroke-width var(--hexagon-transition-duration), stroke var(--hexagon-transition-duration), fill var(--hexagon-transition-duration);
+    paint-order: stroke;
+}
+
+
+
+.hexagon-link:hover polygon {
+    /*stroke: rgba(168, 219, 236, 1);*/
+    stroke: rgba(56, 129, 162, 0.0);
+    /*stroke-width: 6;*/
+    /*paint-order: stroke;*/
+}
+
+.hexagon-link text {
+    font-weight: bold;
+    transition: fill var(--hexagon-transition-duration), text-shadow var(--hexagon-transition-duration), font-size var(--hexagon-transition-duration);
+    /*fill: rgb(74, 74, 74);*/
+    font-size: var(--hexagon-font-size);
+}
+
+.hexagon-link:hover text {
+    fill: rgba(1, 65, 92, 0.9);
+    text-shadow: rgba(255, 255, 255, 0.5) 0.1em 0.1em;
+    /*font-size: 1em; /* just temp for show */
+    font-size: var(--hexagon-font-size-hovered);
+}
+
+
+/* color stops for the hexagon fill gradients */
+stop {
+    transition: stop-color var(--hexagon-transition-duration);
+}
+
+    stop.s1 {
+        stop-color: rgb(56, 129, 162);
+    }
+
+    stop.s2 {
+        stop-color: rgb(86, 170, 199);
+    }
+
+    stop.s3 {
+        stop-color: rgb(153, 231, 246)
+    }
+
+    stop.s1.hovered {
+        stop-color: rgb(56, 129, 162);
+    }
+
+    stop.s2.hovered {
+        stop-color: rgb(133, 203, 227);
+    }
+
+    stop.s3.hovered {
+        stop-color: rgb(238, 252, 255);
+    }
